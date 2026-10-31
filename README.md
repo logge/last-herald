@@ -6,6 +6,7 @@ The promotional website for **The Last Herald**, a free point-and-click adventur
 
 - `index.html`: the game: the story, the kids, pictures, what's in it, and where to get it.
 - `privacy/`: the privacy policy, **https://logge.github.io/last-herald/privacy/**, the address to give Google Play (and later the App Store).
+- `watchfaces/privacy/`: the privacy policy of the watch faces Sunward, Walkies and Roomie (from the [watchfaces](https://github.com/logge/watchfaces) repository's `store/privacy-policy.md`), **https://logge.github.io/last-herald/watchfaces/privacy/**, for their Google Play listings. Nothing on the site links to it.
 
 It's plain HTML and CSS, served as it is by GitHub Pages from the `main` branch: no build step. It loads nothing from other sites (the font, Pixelify Sans, is in `fonts/`, under the SIL Open Font License in `fonts/OFL.txt`), and has no cookies or analytics.
 
