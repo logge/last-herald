@@ -4,8 +4,8 @@
 // on the page goes live ("Get it on Google Play"); while it's empty, the button
 // says "Coming soon".
 const STORES = {
-  play: '', // Google Play: https://play.google.com/store/apps/details?id=io.github.logge.lastherald
-  itch: '', // itch.io, in the browser
+  play: 'https://play.google.com/store/apps/details?id=io.github.logge.lastherald', // Google Play
+  itch: 'https://plogarn.itch.io/the-last-herald', // itch.io, in the browser
   apple: '', // the App Store, for iPhone and iPad
 };
 const LIVE = { play: 'Get it on', itch: 'Play it on', apple: 'Download on the' };
@@ -19,6 +19,17 @@ for (const a of document.querySelectorAll('[data-store]')) {
   a.classList.replace('soon', 'live');
   a.querySelector('small').textContent = LIVE[a.dataset.store];
 }
+
+// The game itself, played on the page: itch.io's player, which loads it from itch.io. Nothing comes from itch.io (or
+// any other site) until the button is pressed: until then it's only a picture and a button
+const player = document.querySelector('.player');
+player?.querySelector('button').addEventListener('click', () => {
+  const frame = document.createElement('iframe');
+  Object.assign(frame, { src: player.dataset.src, title: 'The Last Herald', allow: 'autoplay; fullscreen', allowFullscreen: true });
+  player.replaceChildren(frame);
+  player.classList.add('playing');
+  frame.focus();
+});
 
 // The pictures: a click opens one large, and the arrows (or the arrow keys) go through them
 const shots = [...document.querySelectorAll('.gallery button')];

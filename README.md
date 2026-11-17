@@ -8,19 +8,23 @@ The promotional website for **The Last Herald**, a free point-and-click adventur
 - `privacy/`: the privacy policy, **https://logge.github.io/last-herald/privacy/**, the address to give Google Play (and later the App Store).
 - `watchfaces/privacy/`: the privacy policy of the watch faces Sunward, Walkies and Roomie (from the [watchfaces](https://github.com/logge/watchfaces) repository's `store/privacy-policy.md`), **https://logge.github.io/last-herald/watchfaces/privacy/**, for their Google Play listings. Nothing on the site links to it.
 
-It's plain HTML and CSS, served as it is by GitHub Pages from the `main` branch: no build step. It loads nothing from other sites (the font, Pixelify Sans, is in `fonts/`, under the SIL Open Font License in `fonts/OFL.txt`), and has no cookies or analytics.
+It's plain HTML and CSS, served as it is by GitHub Pages from the `main` branch: no build step. It loads nothing from other sites (the font, Pixelify Sans, is in `fonts/`, under the SIL Open Font License in `fonts/OFL.txt`), and has no cookies or analytics. The one exception is the game itself: the "Play it here" section is a picture and a button, and only when the button is pressed does it load itch.io's player (`https://itch.io/embed-upload/20450633`, the browser build's upload on itch.io; a new upload gets a new number, so change it in `index.html` when the build is replaced). The privacy policy says so.
 
-## When the game is out
+## The stores
 
-The three buttons at the top say "Coming soon" until they have an address. Fill each in at the top of `js/site.js`, and its button goes live:
+The three buttons at the top go live once they have an address, at the top of `js/site.js`; until then a button says "Coming soon". Google Play and itch.io are live; the App Store is still to come:
 
 ```js
 const STORES = {
   play: 'https://play.google.com/store/apps/details?id=io.github.logge.lastherald',
-  itch: '',
+  itch: 'https://plogarn.itch.io/the-last-herald',
   apple: '',
 };
 ```
+
+## Playing it here
+
+Under the story, the game can be played on the page, in itch.io's player for the browser build: `data-src` on the `.player` in `index.html`, `https://itch.io/embed-upload/20450633`. That number is the upload's on itch.io, so it changes if the zip there is deleted and a new one uploaded: then put the new one in (it's in the address of the game's frame on the itch.io page, `html-classic.itch.zone/html/<number>/`). Pushing new builds with itch.io's `butler` keeps the same upload, and the same number.
 
 ## The pictures
 
