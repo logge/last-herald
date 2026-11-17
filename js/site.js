@@ -7,8 +7,9 @@ const STORES = {
   play: 'https://play.google.com/store/apps/details?id=io.github.logge.lastherald', // Google Play
   itch: 'https://plogarn.itch.io/the-last-herald', // itch.io, in the browser
   apple: '', // the App Store, for iPhone and iPad
+  amiga: 'https://github.com/logge/last-herald/releases/download/amiga-1.0/TheLastHerald-Amiga-1.0.zip', // the Amiga 1200: the release on GitHub (this repository's releases)
 };
-const LIVE = { play: 'Get it on', itch: 'Play it on', apple: 'Download on the' };
+const LIVE = { play: 'Get it on', itch: 'Play it on', apple: 'Download on the', amiga: 'Download for' };
 
 for (const a of document.querySelectorAll('[data-store]')) {
   const url = STORES[a.dataset.store];

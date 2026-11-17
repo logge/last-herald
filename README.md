@@ -12,15 +12,20 @@ It's plain HTML and CSS, served as it is by GitHub Pages from the `main` branch:
 
 ## The stores
 
-The three buttons at the top go live once they have an address, at the top of `js/site.js`; until then a button says "Coming soon". Google Play and itch.io are live; the App Store is still to come:
+The buttons at the top go live once they have an address, at the top of `js/site.js`; until then a button says "Coming soon". Google Play, itch.io and the Amiga are live; the App Store is still to come:
 
 ```js
 const STORES = {
   play: 'https://play.google.com/store/apps/details?id=io.github.logge.lastherald',
   itch: 'https://plogarn.itch.io/the-last-herald',
   apple: '',
+  amiga: 'https://github.com/logge/last-herald/releases/download/amiga-1.0/TheLastHerald-Amiga-1.0.zip',
 };
 ```
+
+## On the Amiga
+
+The Amiga 1200 version (from the game's port, its `release.sh`) is a release of this repository on GitHub, `amiga-1.0`, its zip there: the game's drawer and icons, the configurations for WinUAE and FS-UAE, and a ReadMe. The "Amiga 1200" buttons (at the top, and in the "On the Amiga" section) download it; a new version is a new release, its address in `js/site.js`. The section's picture, `assets/amiga/square.png`, is the Amiga's own display (320 x 256, from its demo film), shown large, its pixels sharp; it and the YouTube button link to the demo film (https://www.youtube.com/watch?v=VHJVSludNbY). Both are links: nothing loads from GitHub or YouTube until they're followed.
 
 ## Playing it here
 
